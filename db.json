@@ -1,27 +1,24 @@
 {
   "schools": [
-    {"id": 1, "name": "School 1"}
+    {
+      "id": "a74f",
+      "name": "escola do pará"
+    },
+    {
+      "id": "15ce",
+      "name": "escola 1"
+    }
   ],
   "classes": [
-    {"id": 1, "name": "Class 1", "schoolId": 1},
-    {"id": 2, "name": "Class 1", "schoolId": 1},
-    {"id": 3, "name": "Class 1", "schoolId": 1},
-    {"id": 4, "name": "Class 1", "schoolId": 1},
-    {"id": 5, "name": "Class 1", "schoolId": 1},
-    {"id": 6, "name": "Class 1", "schoolId": 1},
-    {"id": 7, "name": "Class 1", "schoolId": 1},
-    {"id": 8, "name": "Class 1", "schoolId": 1},
-    {"id": 9, "name": "Class 1", "schoolId": 1},
-    {"id": 10, "name": "Class 1", "schoolId": 1},
-    {"id": 11, "name": "Class 1", "schoolId": 1},
-    {"id": 12, "name": "Class 1", "schoolId": 1},
-    {"id": 13, "name": "Class 1", "schoolId": 1},
-    {"id": 14, "name": "Class 1", "schoolId": 1},
-    {"id": 15, "name": "Class 1", "schoolId": 1},
-    {"id": 16, "name": "Class 1", "schoolId": 1},
-    {"id": 17, "name": "Class 1", "schoolId": 1},
-    {"id": 18, "name": "Class 1", "schoolId": 1},
-    {"id": 19, "name": "Class 1", "schoolId": 1},
-    {"id": 20, "name": "Class 1", "schoolId": 1}
+    {
+      "id": "2aec",
+      "name": "gfdsgfds",
+      "schoolId": null
+    },
+    {
+      "id": "7c36",
+      "name": "fdsafsd",
+      "schoolId": "a74f"
+    }
   ]
 }

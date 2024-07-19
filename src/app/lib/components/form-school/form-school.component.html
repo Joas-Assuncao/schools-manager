@@ -1,22 +1,40 @@
-<div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
-  <h2 class="text-2xl font-bold mb-4 text-gray-800">Cadastro de Turma</h2>
-  <form>
-    <div class="mb-4">
-      <label for="className" class="block text-sm font-medium text-gray-700">Nome da Turma</label>
-      <input type="text" id="className" name="className" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Digite o nome da turma">
-    </div>
-    <div class="mb-4">
-      <label for="schoolId" class="block text-sm font-medium text-gray-700">Selecione a Escola</label>
-      <select id="schoolId" name="schoolId" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-        <option value="">Selecione uma escola</option>
-        <!-- Adicione opções de escolas aqui -->
-        <option value="1">Escola A</option>
-        <option value="2">Escola B</option>
-        <option value="3">Escola C</option>
-      </select>
-    </div>
-    <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-      Enviar
-    </button>
-  </form>
-</div>
+<section>
+  <h1>Cadastrar Escola</h1>
+  <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">Cadastro de Escola</h2>
+    <form
+      (submit)="handleSubmit($event)"
+      [formGroup]="myForm"
+    >
+      <div class="mb-4">
+        <label
+          for="schoolName"
+          class="block text-sm font-medium text-gray-700"
+          >Nome da Escola</label
+        >
+        <input
+          type="text"
+          id="schoolName"
+          formControlName="name"
+          name="schoolName"
+          required
+          class="mt-1 block w-full px-3 py-2 text-gray-700 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm"
+          placeholder="Digite o nome da escola"
+        />
+        <div
+          *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"
+          class="text-yellow-500 text-sm"
+        >
+          O nome da escola é obrigatório!
+        </div>
+      </div>
+      <button
+        type="submit"
+        [disabled]="isLoading"
+        class="w-full py-2 px-4 bg-red-600 text-white font-semibold rounded-md disabled:opacity-30 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+      >
+        Enviar
+      </button>
+    </form>
+  </div>
+</section>

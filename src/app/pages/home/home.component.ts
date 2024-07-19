@@ -66,8 +66,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   getAllData(): void {
     combineLatest([
-      this._schoolsService.getSchools(this.schoolsPagination),
-      this._classesService.getClasses(this.classesPagination),
+      this._schoolsService.get(this.schoolsPagination),
+      this._classesService.get(this.classesPagination),
     ]).subscribe(([schools, classes]) => {
       this.schools = schools.data;
       this.classes = classes.data;
@@ -85,9 +85,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getSchools(): void {
-    this._schoolsService.getSchools(this.schoolsPagination).subscribe((schools) => {
-      this.classes = schools.data;
-      this.classesMetadata = {
+    this._schoolsService.get(this.schoolsPagination).subscribe((schools) => {
+      this.schools = schools.data;
+      this.schoolsMetadata = {
         total: schools.items,
         prev: schools.prev,
         next: schools.next,
@@ -96,7 +96,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getClasses(): void {
-    this._classesService.getClasses(this.classesPagination).subscribe((classes) => {
+    this._classesService.get(this.classesPagination).subscribe((classes) => {
       this.classes = classes.data;
       this.classesMetadata = {
         total: classes.items,

@@ -16,9 +16,13 @@ export class SchoolsService implements OnDestroy {
     console.error('Method not implemented.');
   }
 
-  getSchools(pagination: Pagination): Observable<ApiResponse> {
+  get(pagination?: Pagination): Observable<ApiResponse> {
     return this._http.get<ApiResponse>(
-      `${this.apiUrl}?_page=${pagination.page || 1}&_per_page=${pagination.perPage || 10}`,
+      `${this.apiUrl}?_page=${pagination?.page || 1}&_per_page=${pagination?.perPage || 10}`,
     );
+  }
+
+  create(data: { name: string }): Observable<void> {
+    return this._http.post<void>(this.apiUrl, data);
   }
 }

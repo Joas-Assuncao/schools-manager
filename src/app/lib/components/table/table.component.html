@@ -24,21 +24,19 @@
     </table>
   </div>
 
-  <nav class="flex gap-2 items-center">
+  <nav class="flex gap-2 items-center" *ngIf="dataSource.length > 0">
     <span>Página: {{ pagination.page }}</span>
-    <button (click)="onPrevPage()" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+    <button (click)="onPrevPage()" [disabled]="!metadata.prev" class="px-3 py-2 rounded-l-md border disabled:opacity-30 border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
       Anterior
     </button>
-    <button (click)="onNextPage()" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+    <button (click)="onNextPage()" [disabled]="!metadata.next" class="px-3 py-2 rounded-r-md border disabled:opacity-30 border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
       Próximo
     </button>
     <span>Total: {{ metadata.total }}</span>
   </nav>
   
   <ng-template #hasNotDataSource>
-    <div>
-      <p>Nenhum dado disponível</p>
-    </div>
+    <p class="font-bold text-xl w-full text-center">Nenhum dado disponível!</p>
   </ng-template>
 </main>
 
