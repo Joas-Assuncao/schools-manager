@@ -1,21 +1,16 @@
+# Para rodar:
+
+  - npm install -g pnpm
+  - pnpm install
+  - pnpm dev
+  - npx json-server db.json
+
+
 <p align="center">
   <img src="https://api.iconify.design/logos:angular-icon.svg" alt="Angular brand" width="100" height="100"/>
 </p>
 
 <h1 align="center">Angular Boilerplate</h1>
-
-<br>
-
-<p align='center'>
-  <a href="https://angularboilerplate.vercel.app/">Live site (Demo)</a>
-</p>
-
-<br>
-
-<p align='center'>
-  <strong>English</strong> |
-  <a href="https://github.com/juanmesa2097/angular-boilerplate/blob/main/README.es-CO.md">Español</a>
-</p>
 
 <br>
 
