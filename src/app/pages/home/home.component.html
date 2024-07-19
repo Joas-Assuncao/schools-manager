@@ -1,31 +1,24 @@
 <section>
     <h1>Início</h1>
 
-    <h2 class="mb-4">Escolha seu tema</h2>
-
-    <div class="flex flex-wrap gap-3 mb-6">
-        <button
-            class="min-w-[150px] btn {{ currentTheme === 'system' ? 'btn-primary' : 'btn-secondary' }}"
-            (click)="handleThemeChange('system')"
-        >
-            <span class="icon-[carbon--screen] text-2xl mr-2"></span>
-            Sistema
-        </button>
-        <button
-            data-cy="theme-light-button"
-            class="min-w-[150px] btn {{ currentTheme === 'light' ? 'btn-primary' : 'btn-secondary' }}"
-            (click)="handleThemeChange('light')"
-        >
-            <span class="icon-[carbon--sun] text-2xl mr-2"></span>
-            Claro
-        </button>
-        <button
-            data-cy="theme-dark-button"
-            class="min-w-[150px] btn {{ currentTheme === 'dark' ? 'btn-primary' : 'btn-secondary' }}"
-            (click)="handleThemeChange('dark')"
-        >
-            <span class="icon-[carbon--moon] text-2xl mr-2"></span>
-            Escuro
-        </button>
+    <div class="flex flex-wrap gap-3 mb-6 justify-between">
+        <app-table
+            [dataSource]="schools"
+            [displayedColumns]="['id', 'name']"
+            [title]="'Escolas'"
+            [pagination]="schoolsPagination"
+            [metadata]="schoolsMetadata"
+            (getAllData)="getSchools()"
+            class="flex-1"
+        ></app-table>
+        <app-table
+            [dataSource]="classes"
+            [displayedColumns]="['id', 'name', 'schoolId']"
+            [title]="'Turmas'"
+            [pagination]="classesPagination"
+            [metadata]="classesMetadata"
+            (getAllData)="getClasses()"
+            class="flex-1"
+        ></app-table>
     </div>
 </section>

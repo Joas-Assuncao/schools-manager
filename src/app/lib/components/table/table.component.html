@@ -1,0 +1,44 @@
+<main class="flex flex-col gap-4 items-center">
+  <h1>
+    {{ title }}
+  </h1>
+
+  <div class="w-full max-h-52 overflow-y-auto">
+    <table *ngIf="dataSource.length > 0; else hasNotDataSource" class="min-w-full bg-white border border-gray-200 rounded-lg">
+      <thead>
+        <tr>
+          <th *ngFor="let column of displayedColumns" class="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-md font-semibold text-gray-500 uppercase tracking-wider">{{ column }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container>
+          <tr *ngFor="let row of dataSource">
+            <td *ngFor="let column of displayedColumns" class="px-6 py-4 whitespace-nowrap text-md font-medium text-gray-900">
+              <ng-container *ngIf="row[column]">
+                {{ row[column] }}
+              </ng-container>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <nav class="flex gap-2 items-center">
+    <span>Página: {{ pagination.page }}</span>
+    <button (click)="onPrevPage()" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+      Anterior
+    </button>
+    <button (click)="onNextPage()" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+      Próximo
+    </button>
+    <span>Total: {{ metadata.total }}</span>
+  </nav>
+  
+  <ng-template #hasNotDataSource>
+    <div>
+      <p>Nenhum dado disponível</p>
+    </div>
+  </ng-template>
+</main>
+

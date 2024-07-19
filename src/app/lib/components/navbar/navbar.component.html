@@ -6,7 +6,7 @@
             <button
                 data-cy="register-school-button"
                 class="btn btn-secondary"
-                (click)="onClickSignOut()"
+                [routerLink]="['/schools']"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@
             <button
                 data-cy="register-class-button"
                 class="btn btn-secondary"
-                (click)="onClickSignOut()"
+                [routerLink]="['/classes']"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

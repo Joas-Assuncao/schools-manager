@@ -4,9 +4,9 @@
     "singleQuote": true,
     "singleAttributePerLine": true,
     "printWidth": 120,
-    "tabWidth": 4,
+    "tabWidth": 2,
     "useTabs": false,
-    "endOfLine": "auto",
+    "endOfLine": "lf",
     "overrides": [
         {
             "files": ["*.md", "*.json", "*.yml", "*.yaml"],
